@@ -261,3 +261,229 @@ function isNumberInRange(start, end, number) {
   
     return isInRange;
   }
+
+//Exercise
+
+//The checkIfCanAccessContent(subType) function checks if the user can access the content. Verification occurs by subscription type. Only users with a pro or vip subscription can access.
+
+//Set the variable canAccessContent to a subscription verification expression. If the value of the subType parameter is equal to the strings "pro" or "vip", the user will be granted access. The result of the test expression will be a boolean true or false.
+
+function checkIfCanAccessContent(subType) {
+  const canAccessContent = subType === `pro` || subType === `vip`; // Change this line
+
+  return canAccessContent;
+}
+
+//Exercise
+
+//The isNumberNotInRange(start, end, number) function checks if a number is in a range. That is, the number must be less than or equal to start and greater than or equal to end. The result of the test expression will be a boolean true or false.
+
+//It declares three parameters, the values ​​of which will be set during its call:
+
+//number - the number whose non-occurrence is being checked
+//start - the start of the numeric span
+//end - the end of the numeric range
+//Assign to the variable isNotInRange an inverse expression of the value of the variable isInRange using the ! operator.
+
+
+function isNumberNotInRange(start, end, number) {
+  const isInRange = number >= start && number <= end;
+  const isNotInRange = !isInRange; // Change this line
+
+  return isNotInRange;
+}
+
+//Exercise
+
+//The getDiscount(totalSpent) function determines the discount value depending on the total amount of money spent (totalSpent parameter) in the store for the entire time (affiliate program). The discount is written to the discount variable and returned from the function as a result of its work.
+
+//Use branches and logical operators to complete the function code.
+
+//If spent from 50000 ( inclusive ) or more credits - 10% discount (gold partner)
+//If spent from 20,000 (inclusive) to 50,000 credits - 5% discount (silver partner)
+//If spent from 5000 (inclusive) to 20000 credits - 2% discount (bronze partner)
+//If less than 5000 credits spent - discount 0 (basic partner)
+//The discount values ​​of each level are stored in the BASE_DISCOUNT, BRONZE_DISCOUNT, SILVER_DISCOUNT and GOLD_DISCOUNT constants of the same name.
+
+function getDiscount(totalSpent) {
+  const BASE_DISCOUNT = 0;
+  const BRONZE_DISCOUNT = 0.02;
+  const SILVER_DISCOUNT = 0.05;
+  const GOLD_DISCOUNT = 0.1;
+  let discount;
+  // Change code below this line
+   if (totalSpent >= 50000) {
+     discount = GOLD_DISCOUNT;
+   } else if (totalSpent >= 20000 && totalSpent <= 50000) {
+     discount = SILVER_DISCOUNT;
+   } else if (totalSpent >= 5000 && totalSpent <= 20000) {
+     discount = BRONZE_DISCOUNT;
+   } else if (totalSpent < 5000) {
+     discount = BASE_DISCOUNT;
+   }
+  // Change code above this line
+  return discount;
+}
+
+//Exercise
+
+//Refactor the solution to the Goods Warehouse problem by replacing the if...else statement with a ternary operator.
+
+//function checkStorage(available, ordered) {
+//  let message;
+// Change code below this line
+//  if (ordered > available) {
+//    message = "Not enough goods in stock!";
+//  } else {
+//    message = "The order is accepted, our manager will contact you";
+//  }
+// Change code above this line
+//  return message;
+//}
+
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+
+  message = (available > ordered) ? "The order is accepted, our manager will contact you"
+    : "Not enough goods in stock!"
+  
+ // Change code above this line
+  return message;
+}
+
+//Exercise
+
+//The checkPassword(password) function compares the password passed to it (password parameter) with the stored administrator password (ADMIN_PASSWORD constant) and returns a string with the result message.
+
+//Using the ternary operator, complete the function so that:
+
+//If the password and ADMIN_PASSWORD values match, set the message variable to the string "Access is allowed".
+//Otherwise, set message to the string "Access denied, wrong password!".
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
+ message = (password === ADMIN_PASSWORD) ? "Access is allowed" : "Access denied, wrong password!"
+  // Change code above this line
+  return message;
+}
+
+//Exercise
+
+//The getSubscriptionPrice(type) function receives a result with the user's subscription type (type parameter), which finds that it matches the possible monthly subscription types and returns the price of the stored import price.
+
+//If the parameter type is a string:
+
+//"starter" - subscription price 0 credits.
+//"professional" - the subscription price is 20 credits.
+//"organization" - the subscription price is 50 credits.
+//appears in the body of the if...else function, which looked like this.
+
+//if(type === "starter") {
+//  price = 0;
+//} else if (type === "professional") {
+//  price = 20;
+//} else if (type === "organization") {
+//  price = 50;
+///}
+//After the control refactoring, if..else has been replaced with a switch. Complete the code of the switch statement so that the function works correctly.
+
+function getSubscriptionPrice(type) {
+  let price;
+  // Change code below this line
+
+ switch (type) { // Change this line
+    case "starter": // Change this line
+      price = 0; // Change this line
+      break;
+
+    case "professional": // Change this line
+      price = 20; // Change this line
+      break;
+
+    case "organization": // Change this line
+      price = 50; // Change this line
+      break;
+  }
+
+  // Change code above this line
+  return price;
+}
+
+//Exercise
+
+//The checkPassword(password) function takes the password in the password parameter, checks it against the administrator password in the ADMIN_PASSWORD variable, and returns a message about the result of the comparison stored in the message variable.
+
+//If the value of the password parameter is:
+
+//is null, which means the user canceled the operation and the message contains the string "Canceled by user!".
+//matches the value of ADMIN_PASSWORD, the string "Welcome!" is assigned to the message variable.
+//does not satisfy any of the previous conditions, the string "Access denied, wrong password!" is written to the message variable.
+//Refactor the code by replacing the if..else statement with a switch, and don't forget about the default block (similar to else).
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
+
+  switch (password) {
+    case ADMIN_PASSWORD :
+    message = "Welcome!";
+    break;
+
+    case null:
+    message = "Canceled by user!";
+    break;
+
+    default:
+    message = "Access denied, wrong password!"
+  }
+
+  // Change code above this line
+  return message;
+}
+
+//Exercise
+
+//The getShippingCost(country) function should check whether the goods can be delivered to the user's country (the country parameter) and return a result message stored in the message variable. Be sure to use the switch statement.
+
+//The format of the returned string is "Shipping to <country> will cost <price> credits", where <country> and <price> should be replaced with the appropriate values.
+
+//List of countries and shipping cost:
+
+//China - 100 credits
+//Chile - 250 credits
+//Australia - 170 credits
+//Jamaica - 120 credits
+//From the list you can see that delivery is not available everywhere. If the specified country is not in the list, then the function should return the string "Sorry, there is no delivery to your country"
+
+function getShippingCost(country) {
+  let message;
+  // Change code below this line
+
+  switch (country){
+    case `China`:
+        message = `Shipping to ${country} will cost 100 credits`;
+        break;
+
+    case `Chile`:
+        message = `Shipping to ${country} will cost 250 credits`;
+        break;
+
+    case `Australia`:
+        message = `Shipping to ${country} will cost 170 credits`;
+        break;
+
+    case `Jamaica`:
+        message = `Shipping to ${country} will cost 120 credits`;
+        break;
+
+    default:
+      message = `Sorry, there is no delivery to your country`;
+  }
+
+  // Change code above this line
+  return message;
+}
