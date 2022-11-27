@@ -487,3 +487,114 @@ function getShippingCost(country) {
   // Change code above this line
   return message;
 }
+
+//Exercise
+
+//The getNameLength(name) function takes a name (the name parameter) and returns a string containing its length. Pad the template string in the message variable with the length of the string from the name parameter.
+
+function getNameLength(name) {
+  const message = `Name ${name} is ${name.length} characters long`; // Change this line
+
+  return message;
+}
+
+//Exercise
+
+//Complete the code by assigning expressions to the declared variables to access the corresponding elements or properties of the string in the course variable.
+
+//courseTopicLength - the length of the string.
+//firstElement - the first character of the string.
+//lastElement - the last character of the string.
+
+
+const courseTopic = "JavaScript essentials";
+// Change code below this line
+
+const courseTopicLength = courseTopic.length;
+const firstElement = courseTopic[0];
+const lastElement = courseTopic[courseTopic.length - 1];
+
+// Change code above this line
+
+
+//Exercise
+//The getSubstring(string, length) function takes a string and returns a substring from the beginning to length characters. It declares two parameters, the values of which will be set during its call:
+
+//string - the original string
+//length - the number of characters from the beginning of the string for the substring
+//Assign to the variable substring an expression to create a substring of length length characters (from the beginning) from the string string.
+
+function getSubstring(string, length) {
+  const substring = string.slice(0, length); // Change this line
+
+  return substring;
+}
+
+//Exercise
+
+//The formatMessage(message, maxLength) function takes a string (the message parameter) and formats it if the length exceeds the value in the maxLength parameter.
+
+//Complete the function code so that if the length of the string is:
+
+//does not exceed maxLength, the function returns it in its original form.
+//greater than maxLength, the function cuts the string to maxLength characters and adds an ellipsis "..." to the end, after which it returns a shortened version.
+
+function formatMessage(message, maxLength) {
+  let result;
+  // Change code below this line
+
+  if (message.length <= maxLength) {
+    result = message;
+  } else {
+    result = message.slice(0, maxLength) + `...`;
+  }
+  
+  /// Change code above this line
+  return result;
+}
+
+
+//Exercise
+
+//The normalizeInput(input) function takes a string (the input parameter) and returns the same string, but in lowercase. Set the normalizedInput variable to the lowercase string creation expression from the input parameter.
+
+function normalizeInput(input) {
+  const normalizedInput = input.toLowerCase(); // Change this line
+
+  return normalizedInput;
+}
+
+
+//Exercise
+
+//The checkForName(fullname, name) function takes two parameters and returns a boolean true or false - the result of checking whether the substring name is present in the fullname string.
+
+//fullname - full name consisting of two words (first and last name) separated by a space.
+//name - the name to check for occurrence in the fully qualified name.
+//Assign to the result variable an expression to check whether the name (parameter name) occurs in the full name (parameter fullname). Let the function strictly refer to the case of letters, that is, "Petya" and "Petya" are different names for it.
+
+function checkForName(fullName, name) {
+  const result = fullName.includes(name); // Change this line
+   return result;
+ }
+
+
+//Exercise
+
+//The checkForSpam(message) function takes a string (message parameter), checks it for the forbidden words spam and sale, and returns the result of the check. The words in the message parameter string can be in any case, such as SPAM or sAlE.
+
+//If a forbidden word (spam or sale) is found, then the function returns a boolean true.
+//If there are no forbidden words in the string, the function returns a boolean false.
+
+function checkForSpam(message) {
+  let result;
+  // Change code below this line
+
+  const normalizedMassage = message.toLowerCase()
+
+  result = normalizedMassage.includes("spam") || normalizedMassage.includes("sale") ? true
+    :false
+
+  // Change code above this line
+  return result;
+}
